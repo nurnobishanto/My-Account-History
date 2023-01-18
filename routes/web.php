@@ -22,3 +22,14 @@ Route::get('/', function () {
     $categories = Category::all();
     return view('welcome',compact(['incoming','outgoing','categories']));
 });
+Route::get('command', function () {
+
+	
+
+	/* php artisan migrate */
+
+    \Artisan::call('shield:super-admin --user=1');
+
+    dd("Done");
+
+});
