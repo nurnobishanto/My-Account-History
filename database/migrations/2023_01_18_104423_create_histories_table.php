@@ -21,6 +21,7 @@ return new class extends Migration
 			$table->integer('amount')->nullable();
 			$table->string('type')->nullable();
 			$table->string('note')->nullable();
+            $table->string('date')->nullable();
             $table->timestamps();
         });
     }

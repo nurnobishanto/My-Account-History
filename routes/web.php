@@ -3,7 +3,7 @@
 use App\Models\Category;
 use App\Models\History;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,15 +21,27 @@ Route::get('/', function () {
     $outgoing = History::where('type','Outgoing')->where('user_id',auth()->id())->sum('amount');
     $categories = Category::all();
     return view('welcome',compact(['incoming','outgoing','categories']));
-});
-Route::get('command', function () {
+})->name('dashboard');
+Route::get('/add', function () {
+    $categories = Category::all();
+    return view('add',compact(['categories']));
+})->name('add');
+Route::post('/store', function (Request $request) {
+    $history = new History();
+    $history->title = $request->input('title');
+    $history->category_id = $request->input('category_id');
+    $history->user_id = $request->input('user_id');
+    $history->type = $request->input('type');
+    $history->amount = $request->input('amount');
+    $history->date = $request->input('date');
+    $history->note = $request->input('note');
+    $history->save();
+    return redirect()->route('dashboard');
+})->name('store.h');
+Route::get('/{slug}', function ($slug) {
+    $category = Category::where('slug',$slug)->first();
+    return view('table',compact(['category']));
+})->name('category');
 
-	
 
-	/* php artisan migrate */
 
-    \Artisan::call('shield:super-admin --user=1');
-
-    dd("Done");
-
-});

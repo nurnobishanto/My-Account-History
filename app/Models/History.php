@@ -16,6 +16,7 @@ class History extends Model
         'amount',
         'type',
         'note',
+        'date',
     ];
     public function category():BelongsTo
     {

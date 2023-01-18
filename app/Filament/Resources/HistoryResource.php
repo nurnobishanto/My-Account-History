@@ -16,6 +16,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -48,6 +49,7 @@ class HistoryResource extends Resource
                         'Incoming' => 'Incoming',
                         'Outgoing' => 'Outgoing',
                     ]),
+                DatePicker::make('date'),
                 Textarea::make('note')
                     ->required(),
             ]);
