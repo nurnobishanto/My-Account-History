@@ -21,11 +21,11 @@ Route::get('/', function () {
     $outgoing = History::where('type','Outgoing')->where('user_id',auth()->id())->sum('amount');
     $categories = Category::all();
     return view('welcome',compact(['incoming','outgoing','categories']));
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
 Route::get('/add', function () {
     $categories = Category::all();
     return view('add',compact(['categories']));
-})->name('add');
+})->name('add')->middleware('auth');
 Route::post('/store', function (Request $request) {
     $history = new History();
     $history->title = $request->input('title');
@@ -41,7 +41,7 @@ Route::post('/store', function (Request $request) {
 Route::get('/details/{slug}', function ($slug) {
     $category = Category::where('slug',$slug)->first();
     return view('table',compact(['category']));
-})->name('category');
+})->name('category')->middleware('auth');
 
 
 
