@@ -84,7 +84,7 @@
                     <a href="{{route('category',['slug'=>$category->slug])}}" class="text-decoration-none">
                         <div class="card bg-info text-dark mt-1">
                             <div class="card-body text-center ">
-                                <h2 class="card-title">{{ $category->myHistories->sum('amount') }}</h2>
+                                <h2 class="card-title">{{ $category->myHistories->where('type','Outgoing')->sum('amount') }}</h2>
                                 <h5 class="card-title">{{ $category->title }}</h5>
                             </div>
                         </div>
