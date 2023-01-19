@@ -19,8 +19,10 @@ Route::get('/', function () {
 
     $incoming = History::where('type','Incoming')->where('user_id',auth()->id())->sum('amount');
     $outgoing = History::where('type','Outgoing')->where('user_id',auth()->id())->sum('amount');
+    $upcoming = History::where('type','Upcoming')->where('user_id',auth()->id())->sum('amount');
+    $due = History::where('type','Due')->where('user_id',auth()->id())->sum('amount');
     $categories = Category::all();
-    return view('welcome',compact(['incoming','outgoing','categories']));
+    return view('welcome',compact(['incoming','outgoing','categories','upcoming','due']));
 })->name('dashboard')->middleware('auth');
 Route::get('/add', function () {
     $categories = Category::all();

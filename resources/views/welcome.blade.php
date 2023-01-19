@@ -30,52 +30,73 @@
 
     <div class="container">
         <div class="row  justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-success text-light m-1">
                         <div class="card-body text-center ">
                             <h2 class="card-title">{{ $incoming }}</h2>
-                            <h5 class="card-title">Incoming</h5>
+                            <h5 class="card-title">Total Incoming</h5>
 
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-danger text-light m-1">
                         <div class="card-body text-center ">
                             <h2 class="card-title">{{ $outgoing }}</h2>
-                            <h5 class="card-title">Outgoing</h5>
+                            <h5 class="card-title">Total Outgoing</h5>
 
                         </div>
                     </div>
                 </a>
             </div>
             @if ($incoming > $outgoing)
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <a href="" class="text-decoration-none">
                         <div class="card bg-success text-light m-1">
                             <div class="card-body text-center ">
                                 <h2 class="card-title">{{ $incoming - $outgoing }}</h2>
-                                <h5 class="card-title">Balance</h5>
+                                <h5 class="card-title">Current Balance</h5>
 
                             </div>
                         </div>
                     </a>
                 </div>
             @else
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <a href="#" class="text-decoration-none">
                         <div class="card bg-danger text-light m-1">
                             <div class="card-body text-center ">
                                 <h2 class="card-title">{{ $incoming - $outgoing }}</h2>
-                                <h5 class="card-title">Balance</h5>
+                                <h5 class="card-title">Current Balance</h5>
                             </div>
                         </div>
                     </a>
                 </div>
             @endif
+
+            <div class="col-md-6">
+                <a href="#" class="text-decoration-none">
+                    <div class="card bg-primary text-light m-1">
+                        <div class="card-body text-center ">
+                            <h2 class="card-title">{{ $upcoming }}</h2>
+                            <h5 class="card-title">Total Upcoming</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="#" class="text-decoration-none">
+                    <div class="card bg-warning text-dark m-1">
+                        <div class="card-body text-center ">
+                            <h2 class="card-title">{{ $due }}</h2>
+                            <h5 class="card-title">Total Deu Expense</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
 
 
