@@ -42,9 +42,6 @@ Route::get('/details/{slug}', function ($slug) {
     $category = Category::where('slug',$slug)->first();
     return view('table',compact(['category']));
 })->name('category')->middleware('auth');
-Route::get('/login', function ($slug) {
-    return redirect('/admin');
-})->name('login');
 
 
 
