@@ -15,7 +15,7 @@ return [
     /*
     | Whether or not to automatically display the My Profile page in the navigation of Filament. NOTE: if enable_profile_page => false then this value is ignored.
     */
-    "show_profile_page_in_navbar" => false,
+    "show_profile_page_in_navbar" => true,
     /*
     | Customize the icon profile page icon in the navbar. Does not apply to the user menu.
     */
@@ -59,7 +59,7 @@ return [
     |--------------------------------------------------------------------------
     | Enable Two-Factor Authentication (2FA).
     */
-    "enable_2fa" => false,
+    "enable_2fa" => true,
     /*
     |--------------------------------------------------------------------------
     | Number of seconds before asking the user to confirm their password in PasswordButtonAction again. 300 = 5 minutes
