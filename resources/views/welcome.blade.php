@@ -117,7 +117,7 @@
                             </a>
                         </div>
                     @endif
-                    @if($category->myHistories->where('type','Due')->sum('amount')>0)
+                    @if($category->myHistories->where('type','Upcoming')->sum('amount')>0)
                         <div class="col-md-3">
                             <a href="{{route('upcoming.category',['slug'=>$category->slug])}}" class="text-decoration-none">
                                 <div class="card bg-primary text-dark mt-1">
