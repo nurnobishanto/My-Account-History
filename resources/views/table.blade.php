@@ -19,7 +19,7 @@
 
     <div class="jumbotron ">
         <div class="container text-center mt-5 mb-5">
-            <h1>{{ $category->title }} History</h1>
+            <h1>{{ $category->title }} History ( {{$type}} )</h1>
             <p>
                 <a class="btn btn-info" href="{{ route('add') }}">Add History</a>
                 <a class="btn btn-warning" href="{{ route('dashboard') }}">Dashboard</a>
@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($category->myHistories as $item)
+                        @foreach ($category->myHistories->where('type',$type) as $item)
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>

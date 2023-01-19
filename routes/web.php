@@ -38,10 +38,16 @@ Route::post('/store', function (Request $request) {
     $history->save();
     return redirect()->route('dashboard');
 })->name('store.h')->middleware('auth');
-Route::get('/details/{slug}', function ($slug) {
+Route::get('/incoming/{slug}', function ($slug) {
     $category = Category::where('slug',$slug)->first();
-    return view('table',compact(['category']));
-})->name('category')->middleware('auth');
+    $type = "Incoming";
+    return view('table',compact(['category','type']));
+})->name('incoming.category')->middleware('auth');
+Route::get('/Outgoing/{slug}', function ($slug) {
+    $category = Category::where('slug',$slug)->first();
+    $type = "Outgoing";
+    return view('table',compact(['category','type']));
+})->name('outgoing.category')->middleware('auth');
 Route::get('/login', function () {
     return redirect('/admin');
 })->name('login');
