@@ -34,7 +34,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-success text-light m-1">
                         <div class="card-body text-center ">
-                            <h2 class="card-title">{{ $incoming }}</h2>
+                            <h2 class="card-title">{{ $incoming }} ৳</h2>
                             <h5 class="card-title">Total Incoming</h5>
 
                         </div>
@@ -45,7 +45,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-danger text-light m-1">
                         <div class="card-body text-center ">
-                            <h2 class="card-title">{{ $outgoing }}</h2>
+                            <h2 class="card-title">{{ $outgoing }} ৳</h2>
                             <h5 class="card-title">Total Outgoing</h5>
 
                         </div>
@@ -57,7 +57,7 @@
                     <a href="" class="text-decoration-none">
                         <div class="card bg-success text-light m-1">
                             <div class="card-body text-center ">
-                                <h2 class="card-title">{{ $incoming - $outgoing }}</h2>
+                                <h2 class="card-title">{{ $incoming - $outgoing }} ৳</h2>
                                 <h5 class="card-title">Current Balance</h5>
 
                             </div>
@@ -69,7 +69,7 @@
                     <a href="#" class="text-decoration-none">
                         <div class="card bg-danger text-light m-1">
                             <div class="card-body text-center ">
-                                <h2 class="card-title">{{ $incoming - $outgoing }}</h2>
+                                <h2 class="card-title">{{ $incoming - $outgoing }} ৳</h2>
                                 <h5 class="card-title">Current Balance</h5>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-primary text-light m-1">
                         <div class="card-body text-center ">
-                            <h2 class="card-title">{{ $upcoming }}</h2>
+                            <h2 class="card-title">{{ $upcoming }} ৳</h2>
                             <h5 class="card-title">Total Upcoming</h5>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card bg-warning text-dark m-1">
                         <div class="card-body text-center ">
-                            <h2 class="card-title">{{ $due }}</h2>
+                            <h2 class="card-title">{{ $due }} ৳</h2>
                             <h5 class="card-title">Total Deu Expense</h5>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                         <a href="{{route('outgoing.category',['slug'=>$category->slug])}}" class="text-decoration-none">
                             <div class="card bg-danger text-white mt-1">
                                 <div class="card-body text-center ">
-                                    <h2 class="card-title">{{ $category->myHistories->where('type','Outgoing')->sum('amount') }}</h2>
+                                    <h2 class="card-title">{{ $category->myHistories->where('type','Outgoing')->sum('amount') }} ৳</h2>
                                     <h5 class="card-title">{{ $category->title }} Paid Expense</h5>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                             <a href="{{route('incoming.category',['slug'=>$category->slug])}}" class="text-decoration-none">
                                 <div class="card bg-success text-white mt-1">
                                     <div class="card-body text-center ">
-                                        <h2 class="card-title">{{ $category->myHistories->where('type','Incoming')->sum('amount') }}</h2>
+                                        <h2 class="card-title">{{ $category->myHistories->where('type','Incoming')->sum('amount') }} ৳</h2>
                                         <h5 class="card-title">{{ $category->title }} Incoming</h5>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                             <a href="{{route('deu.category',['slug'=>$category->slug])}}" class="text-decoration-none">
                                 <div class="card bg-warning text-dark mt-1">
                                     <div class="card-body text-center ">
-                                        <h2 class="card-title">{{ $category->myHistories->where('type','Due')->sum('amount') }}</h2>
+                                        <h2 class="card-title">{{ $category->myHistories->where('type','Due')->sum('amount') }} ৳</h2>
                                         <h5 class="card-title">{{ $category->title }} Due Expense</h5>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                             <a href="{{route('upcoming.category',['slug'=>$category->slug])}}" class="text-decoration-none">
                                 <div class="card bg-primary text-light mt-1">
                                     <div class="card-body text-center ">
-                                        <h2 class="card-title">{{ $category->myHistories->where('type','Upcoming')->sum('amount') }}</h2>
+                                        <h2 class="card-title">{{ $category->myHistories->where('type','Upcoming')->sum('amount') }} ৳</h2>
                                         <h5 class="card-title">{{ $category->title }} Upcoming</h5>
                                     </div>
                                 </div>

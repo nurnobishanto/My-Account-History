@@ -50,7 +50,7 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->amount}}</td>
+                                <td>{{$item->amount}} ৳</td>
                                 <td>{{$item->type}}</td>
                                 <td>{{$item->note}}</td>
                                 <td>{{$item->date}}</td>
