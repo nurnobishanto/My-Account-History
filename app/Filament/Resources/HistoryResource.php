@@ -73,7 +73,8 @@ class HistoryResource extends Resource
                 SelectFilter::make('category')->relationship('category', 'title'),
                 SelectFilter::make('type')->options([
                     'Incoming'=>'Incoming',
-                    'Outgoing'=>'Outgoing',
+                    'Outgoing'=>'Paid Expense',
+                    'Due'=>'Deu Expense',
                 ]),
             ])
             ->actions([

@@ -52,7 +52,8 @@
                     <select name="type" id="type" class="form-control" required>
                         <option value="">Select Type</option>
                         <option value="Incoming">Incoming</option>
-                        <option value="Outgoing">Outgoing</option>
+                        <option value="Outgoing">Paid Expense</option>
+                        <option value="Due">Deu Expense</option>
                     </select>
                 </div>
                 <div class="mb-3 form-group col-md-6">
