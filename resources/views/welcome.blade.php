@@ -104,6 +104,7 @@
                             </a>
                         </div>
                     @endif
+
                     @if($category->myHistories->where('type','Due')->sum('amount')>0)
                         <div class="col-md-3">
                             <a href="{{route('deu.category',['slug'=>$category->slug])}}" class="text-decoration-none">
@@ -111,6 +112,18 @@
                                     <div class="card-body text-center ">
                                         <h2 class="card-title">{{ $category->myHistories->where('type','Due')->sum('amount') }}</h2>
                                         <h5 class="card-title">{{ $category->title }} Due Expense</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                    @if($category->myHistories->where('type','Due')->sum('amount')>0)
+                        <div class="col-md-3">
+                            <a href="{{route('upcoming.category',['slug'=>$category->slug])}}" class="text-decoration-none">
+                                <div class="card bg-primary text-dark mt-1">
+                                    <div class="card-body text-center ">
+                                        <h2 class="card-title">{{ $category->myHistories->where('type','Upcoming')->sum('amount') }}</h2>
+                                        <h5 class="card-title">{{ $category->title }} Upcoming</h5>
                                     </div>
                                 </div>
                             </a>

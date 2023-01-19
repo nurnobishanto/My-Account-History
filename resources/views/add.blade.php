@@ -54,6 +54,7 @@
                         <option value="Incoming">Incoming</option>
                         <option value="Outgoing">Paid Expense</option>
                         <option value="Due">Deu Expense</option>
+                        <option value="Upcoming">Upcoming</option>
                     </select>
                 </div>
                 <div class="mb-3 form-group col-md-6">

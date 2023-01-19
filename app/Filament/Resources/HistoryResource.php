@@ -75,6 +75,7 @@ class HistoryResource extends Resource
                     'Incoming'=>'Incoming',
                     'Outgoing'=>'Paid Expense',
                     'Due'=>'Deu Expense',
+                    'Upcoming' => 'Upcoming',
                 ]),
             ])
             ->actions([

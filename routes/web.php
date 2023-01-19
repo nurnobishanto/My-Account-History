@@ -53,6 +53,11 @@ Route::get('/due/{slug}', function ($slug) {
     $type = "Due";
     return view('table',compact(['category','type']));
 })->name('due.category')->middleware('auth');
+Route::get('/upcoming/{slug}', function ($slug) {
+    $category = Category::where('slug',$slug)->first();
+    $type = "Upcoming";
+    return view('table',compact(['category','type']));
+})->name('upcoming.category')->middleware('auth');
 Route::get('/login', function () {
     return redirect('/admin');
 })->name('login');
