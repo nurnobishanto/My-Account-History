@@ -38,7 +38,7 @@ Route::post('/store', function (Request $request) {
     $history->save();
     return redirect()->route('dashboard');
 })->name('store.h');
-Route::get('/{slug}', function ($slug) {
+Route::get('/details/{slug}', function ($slug) {
     $category = Category::where('slug',$slug)->first();
     return view('table',compact(['category']));
 })->name('category');
