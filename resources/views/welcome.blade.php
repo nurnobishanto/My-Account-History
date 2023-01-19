@@ -86,7 +86,7 @@
                             <div class="card bg-danger text-white mt-1">
                                 <div class="card-body text-center ">
                                     <h2 class="card-title">{{ $category->myHistories->where('type','Outgoing')->sum('amount') }}</h2>
-                                    <h5 class="card-title">{{ $category->title }} Expence</h5>
+                                    <h5 class="card-title">{{ $category->title }} Paid Expense</h5>
                                 </div>
                             </div>
                         </a>
@@ -99,6 +99,18 @@
                                     <div class="card-body text-center ">
                                         <h2 class="card-title">{{ $category->myHistories->where('type','Incoming')->sum('amount') }}</h2>
                                         <h5 class="card-title">{{ $category->title }} Incoming</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                    @if($category->myHistories->where('type','Due')->sum('amount')>0)
+                        <div class="col-md-3">
+                            <a href="{{route('deu.category',['slug'=>$category->slug])}}" class="text-decoration-none">
+                                <div class="card bg-warning text-dark mt-1">
+                                    <div class="card-body text-center ">
+                                        <h2 class="card-title">{{ $category->myHistories->where('type','Due')->sum('amount') }}</h2>
+                                        <h5 class="card-title">{{ $category->title }} Due Expense</h5>
                                     </div>
                                 </div>
                             </a>

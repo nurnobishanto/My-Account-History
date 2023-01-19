@@ -3,7 +3,7 @@
 use App\Models\Category;
 use App\Models\History;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +48,11 @@ Route::get('/Outgoing/{slug}', function ($slug) {
     $type = "Outgoing";
     return view('table',compact(['category','type']));
 })->name('outgoing.category')->middleware('auth');
+Route::get('/due/{slug}', function ($slug) {
+    $category = Category::where('slug',$slug)->first();
+    $type = "Due";
+    return view('table',compact(['category','type']));
+})->name('due.category')->middleware('auth');
 Route::get('/login', function () {
     return redirect('/admin');
 })->name('login');
